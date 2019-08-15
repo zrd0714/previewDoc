@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="statics/css/style.css" />
+<link rel="stylesheet" type="text/css" href="statics/css/amazeui.min.css" />
+
+</head>
+
+<body>
+
+<!--内容-->
+<div>
+						<ul>
+							<li class="menu-item menu-item-2">
+								<a class="active" href="javascript:;">产品介绍</a>
+							</li>
+							<li class="menu-item menu-item-2">
+								<a href="#p1">快速接入</a>
+							</li>
+							<li class="menu-item menu-item-2">
+								<a href="#p2">API列表</a>
+							</li>
+						</ul>
+</div>
+			<div class="markdown" id="p1">
+				<h1>
+					要讲认证产品介绍<span class="metadata">更新时间：2018-03-14</span>
+				</h1>
+				<p>对个人进行实人认证，核验方式包括人脸识别、眼纹识别、姓名和身份证号验证等。要讲认证主要解决线上实人开户、帐号实名认证、帐号实人登录等场景中个人身份的识别问题。与其他实人认证服务相比，要讲认证在使用流程中甚至不需要用户做动作就能快速得出认证结果，速度快、体验好、通过率高，拥有业内独有的眼纹人脸双因子认证技术，安全水平已达金融级要求。</p>
+				<h2><a  href="#mao1" class="maodian" id="mao1"></a> 产品特色</h2>
+				<ul>
+					<li>
+						<strong>金融级安全防控：</strong> 10年金融行业实名认证积累使得本产品具有精准识别身份冒用等风险防控能力；
+					</li>
+					<li>
+						<strong>工业级成熟能力：在</strong> 金融，直播，税务，二手交易，酒店，出行，租房等各种成熟业务场景大规模使用；
+					</li>
+					<li>
+						<strong>流畅刷脸体验：</strong> 接入流程简洁高效，提供不同验证方式的智能组合接入，可以方便商户快速接入。实人认证过程流畅自然，体验良好，正常用户通过率高。
+					</li>
+				</ul>
+				<h2><a  href="#mao2" class="maodian" id="mao2"></a> 使用场景</h2>
+				<p>
+					<strong>1.标准认证方案实现快速实人认证</strong><br> 标准认证方案提供基于支付宝客户端的实人认证能力，采用多因子认证技术快速得出认证结果，方案包含4种子产品，可支持不同细分场景的多种定制化认证需求。标准认证方案包含4种子产品，可支持不同细分场景的多种定制化认证需求，场景介绍请见下：
+					<br>
+					<img src="statics/images/1.png" class="align-center"></p>
+				<h6>
+					<a  href="#"></a> 
+					2.<strong>全量认证方案实现全渠道实人认证</strong>
+				</h6>
+				<p>全量认证方案提供“标准认证方案”和“人脸认证SDK”相结合的综合方案，能够自动判断用户当前环境是否安装支付宝客户端，对于已安装的用户提供体验更好安全性更高的“标准认证方案”，对于未安装的用户提供“人脸认证SDK”，帮助合作伙伴的APP实现对未安装支付宝客户端用户的覆盖。<br> 全量认证方案包含“标准认证方案”4种子产品以及“人脸认证SDK”。“标准认证方案”场景介绍请见“标准认证方案场景介绍”；“人脸认证SDK”场景介绍请见下表：
+					<br>
+					<img src="statics/images/2.png" class="align-center"></p>
+				<h3><a  href="#mao3" class="maodian" id="mao3"></a> 产品出入参</h3>
+				<div>
+					<table>
+
+						<tbody>
+							<tr>
+								<td>
+									<div><strong>子产品</strong></div>
+								</td>
+								<td>
+									<div><strong>输入参数</strong></div>
+								</td>
+								<td>
+									<div><strong>输出参数</strong></div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>多因子人脸认证</div>
+									<div>多因子证照和人脸认证</div>
+									<div>多因子证照认证</div>
+									<div>多因子快捷认证</div>
+								</td>
+								<td>
+									<div>以下任意一种：</div>
+									<div>（1）姓名+身份证号</div>
+									<div>（2）支付宝账号ID</div>
+									<div>（3）要讲实人ID</div>
+									<div>（4）无入参（直接唤起支付宝客户端）</div>
+								</td>
+								<td>
+									<div>（1）根据是否认证通过，输出“是”或“否”</div>
+									<div>（2）如果认证通过，则同时输出唯一身份标识</div>
+									<div>（3）如果认证不通过，则同时输出不通过的原因</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>人脸认证SDK</div>
+								</td>
+								<td>
+									<div>姓名+身份证号</div>
+								</td>
+								<td>
+									<div>（1）根据是否认证通过，输出“是”或“否”</div>
+									<div>（2）如果认证不通过，则同时出不通过的原因<br></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<h2><a  href="#mao4" class="maodian" id="mao4"></a> 申请条件</h2>
+				<p>1）合法成立的单位组织，拥有主体资格证明文件，需提供真实有效的营业执照，且认证账户名称需与营业执照主体一致。<br> 2）须具备所属行业的经营许可，拥有经营许可证明文件（若有）。<br> 3）须具备相应的安全技术系统和信息安全管理规范，确保用户信息的数据安全。
+				</p>
+				<h2><a  href="#mao5" class="maodian" id="mao5"></a> 资费标准</h2>
+				<p>注：2017年3月16日至2018年4月15日之间，“信用＋联盟”商家调用本产品免费（人脸认证SDK除外）。
+					<a href="#">查看详情</a>
+				</p>
+				<h6><a  href="#"></a> 计费价格</h6>
+				<ul>
+					<li>多因子人脸认证通过<br>
+						<em>0.40</em>元/次</li>
+					<li>多因子证照和人脸认证通过<br>
+						<em>0.40</em>元/次</li>
+					<li>多因子证照认证通过<br>
+						<em>0.40</em>元/次</li>
+					<li>多因子快捷认证通过<br>
+						<em>0.10</em>元/次</li>
+					<li>人脸SDK认证通过<br>
+						<em>1.00</em>元/次</li>
+				</ul>
+				<h3><a  href="#"></a> </h3>
+				<p>
+					<strong>本接口及文档资料由要讲信用提供。您使用本接口，需要遵守开放平台相关协议及要讲信用要求。</strong>
+				</p>
+			</div>
+			
+			
+			
+			<div class="markdown" id="p2">
+				<h1>
+					要讲认证产品介绍<span class="metadata">更新时间：2018-03-20</span>
+				</h1>
+				<p>对个人进行实人认证，核验方式包括人脸识别、眼纹识别、姓名和身份证号验证等。要讲认证主要解决线上实人开户、帐号实名认证、帐号实人登录等场景中个人身份的识别问题。与其他实人认证服务相比，要讲认证在使用流程中甚至不需要用户做动作就能快速得出认证结果，速度快、体验好、通过率高，拥有业内独有的眼纹人脸双因子认证技术，安全水平已达金融级要求。</p>
+			</div>
+
+
+
+<script src="statics/js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="statics/js/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function() {
+		//左侧菜单
+		var h = 0;
+		$('.menu-item-1 .sub-title').click(function() {
+			$(this).parent().toggleClass('active collapse');
+			$('.menu-item-1').each(function() {
+				h += $(this).height();
+			})
+			//给菜单赋值高度
+			$('.sidebar').css({
+				"height": h
+			});
+			h = 0;
+		})
+		//右上角鼠标悬浮触发下拉
+		$('.dropdown-toc').hover(function() {
+			$('.dropdown-body').toggle();
+		})
+		//滚动监听
+		var leg = $('.maodian').length;
+		$(window).scroll(function() {
+			$('.imgtc').hide(); //滚动后图片放大隐藏
+			var sh = $(window).scrollTop()
+			//右上悬浮
+			sh > 86 ? $('.anchor-toc').addClass('fixed') : $('.anchor-toc').removeClass('fixed');
+			//循环遍历锚点
+			for(i = 1; i <= leg; i++) {
+				if($("#mao" + i).offset().top-140 <= sh) {
+					$('.maodian').removeClass('active');
+					$('#mao' + i).addClass("active");
+					$('.toc-current').text($('#mao'+i).parent().text());
+					$('.dropdown-body ul li').removeClass('active').eq(i-1).addClass('active');
+				}
+				
+			}
+			sh < 140?$('.toc-current').text("本页导航"):"";
+		})
+		//右上角点击
+		$('.dropdown-body ul li').click(function(){
+			var jt = $(this).index();
+			$(window).scrollTop($('.maodian').eq(jt).offset().top-140);
+		})
+		//图片放大
+		$('img').click(function(){
+			var img = $(this).attr('src');
+			$('.imgtc').show().find('img').attr('src',img);
+		})
+		$('.imgtc').click(function(){
+			$(this).toggle();
+		})
+	})
+</script>
+
+</body>
+
+</html>
