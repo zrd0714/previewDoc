@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5,h6{margin-bottom:1em;color:rgba(0,0,0,.85)}
 }
 /*左侧菜单*/
 .sidebar-wrapper{position:absolute;top:0;z-index:99;width:256px;border-right:1px solid #E9E9E9}
-.sidebar-wrapper.fixed{position:fixed;top:45px;height:80%;overflow-y:auto}
+.sidebar-wrapper.fixed{position:fixed;top:86px;height:80%;overflow-y:auto}
 .sidebar{padding:0}
 .sidebar .menu-group{margin-left:-12px}
 .menu-item{padding-left:44px;font-size:14px;line-height:28px}
