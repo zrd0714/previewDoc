@@ -1,4 +1,8 @@
+var isScroll = "0";
+
 $(function() {
+	var dateStr = new Date().Format("yyyy-MM-dd HH:mm:ss");
+	$('.show-time').html(dateStr);
 	//左侧菜单
 	var h = 0;
 	$('.menu-item-1 .sub-title').click(function() {
@@ -64,5 +68,82 @@ $(function() {
 });
 
 $(window).scroll(function(event){
+	//alert(isScroll);
 　　//$("[class=am-active]").parents(".menu-item-1").addClass("active");
-})
+});
+
+//滚动滑轮更新左侧菜单
+var scrollFunc = function (e) {
+	e = e || window.event;
+	if (e.wheelDelta) {
+		if (e.wheelDelta != 0) {
+			$("[class='sub-link am-active']").parents(".menu-item-1").addClass("active");
+			$('.menu-item-1').each(function() {
+				if($("[class='sub-link am-active']").parents(".menu-item-1").attr("name") != $(this).attr("name")) {
+					$(this).removeClass("active");
+					$(this).addClass("collapse");
+				}
+			});
+		}
+	} else if (e.detail) {
+		if (e.detail != 0) {
+			$("[class='sub-link am-active']").parents(".menu-item-1").addClass("active");
+			$('.menu-item-1').each(function() {
+				if($("[class='sub-link am-active']").parents(".menu-item-1").attr("name") != $(this).attr("name")) {
+					$(this).removeClass("active");
+					$(this).addClass("collapse");
+				}
+			});
+		} 
+	}
+}  
+
+//给页面绑定滑轮滚动事件  
+if (document.addEventListener) {  
+	document.addEventListener('DOMMouseScroll', scrollFunc, false);  
+}  
+
+//滚动滑轮触发scrollFunc方法  
+window.onmousewheel = document.onmousewheel = scrollFunc;
+
+//点击隐藏
+$('.menu-top').click(function() {
+	$(this).toggleClass('active collapse');
+	if($(this).hasClass('active')) {
+		$('.sidebar-wrapper').css("left", "0px");
+		$('.main-container').css("left", "0px");
+		//延时方式
+//		setTimeout(function() {
+//			$('.menu-group').show();
+//		}, 1000);
+		//透明度
+		$('.menu-group').css("opacity", "1");
+		$(this).html("隐藏 &laquo;");
+	} else {
+		$('.sidebar-wrapper').css("left", "-200px");
+		$('.main-container').css("left", "-200px");
+		//延时方式
+//		setTimeout(function() {
+//			$('.menu-group').hide();
+//		}, 1000);
+		//透明度
+		$('.menu-group').css("opacity", "0");
+		$(this).html("显示 &raquo;");
+	}
+});
+
+Date.prototype.Format = function (fmt) {
+    var o = {
+        "M+": this.getMonth() + 1, //月份 
+        "d+": this.getDate(), //日 
+        "H+": this.getHours(), //小时 
+        "m+": this.getMinutes(), //分 
+        "s+": this.getSeconds(), //秒 
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+        "S": this.getMilliseconds() //毫秒 
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
