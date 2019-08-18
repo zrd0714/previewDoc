@@ -1,6 +1,58 @@
 var isScroll = "0";
+myList = {
+    "name":"菜单",
+    "num":10,
+    "sites": [
+        { "id": "10000000", "link": "1", "label": "p1", "parentId":"", "name":"一、综合安全管理单元" },
+        { "id": "10100000", "link": "1", "label": "p1-1", "parentId":"10000000", "name":"1.1、安全生产管理机构人员" },
+		{ "id": "10200000", "link": "1", "label": "p1-2", "parentId":"10000000", "name":"1.2、特种作业人员" },
+		{ "id": "10300000", "link": "1", "label": "p1-3", "parentId":"10000000", "name":"1.3、安全生产管理制度" },
+		{ "id": "10400000", "link": "1", "label": "p1-4", "parentId":"10000000", "name":"1.4、安全生产资金投入" },
+		{ "id": "10500000", "link": "1", "label": "p1-5", "parentId":"10000000", "name":"1.5、教育培训" },
+		{ "id": "20000000", "link": "1", "label": "p2", "parentId":"", "name":"二、周边环境" },
+		{ "id": "30000000", "link": "1", "label": "p3", "parentId":"", "name":"三、生产工艺及设备" },
+		{ "id": "30100000", "link": "1", "label": "p3-1", "parentId":"30000000", "name":"3.1、燃煤输送设备及系统" },
+		{ "id": "30200000", "link": "1", "label": "p3-2", "parentId":"30000000", "name":"3.2、锅炉" },
+    ]
+}
+
+function initMenu() {
+	var menuList = myList;
+	var menuTemp = '';
+	for(var i = 0; i < menuList.num; i++) {
+		if(menuList.sites[i].parentId == "") {
+			console.log(menuList.sites[i].name);
+			menuTemp += '<li class="menu-item menu-item-1 collapse" name="' + menuList.sites[i].label + '">';
+			menuTemp += '	<a class="sub-title" href="javascript:;">' + menuList.sites[i].name + '</a>';
+			menuTemp += '</li>';
+			$('.menu-group').append(menuTemp);
+			menuTemp = '';
+		} else {
+			for(var j = 0; j < menuList.num; j++) {
+				if(menuList.sites[i].parentId == menuList.sites[j].id) {
+					//if($('.' + menuList.sites[j].label).children('ul').length == 0) {
+					if($('[name="' + menuList.sites[j].label + '"]').children('ul').length == 0) {
+						menuTemp += ' <ul>';
+						menuTemp += ' </ul>';
+						$('[name="' + menuList.sites[j].label + '"]').append(menuTemp);
+						menuTemp = '';
+					}
+					
+					menuTemp += '		<li class="menu-item menu-item-2">';
+					menuTemp += '			<a href="#' + menuList.sites[i].label + '" class="sub-link">' + menuList.sites[i].name + '</a>';
+					menuTemp += '		</li>';
+					//$('.' + menuList.sites[j].label + ' ul').append(menuTemp);
+					$('[name="' + menuList.sites[j].label + '"] ul').append(menuTemp);
+					menuTemp = '';
+				}
+			}
+		}
+	}
+}
 
 $(function() {
+	initMenu();
+	
 	var dateStr = new Date().Format("yyyy-MM-dd HH:mm:ss");
 	$('.show-time').html(dateStr);
 	//左侧菜单
