@@ -1,5 +1,5 @@
 var isScroll = "0";
-var initShowSection = 0;
+var initShowSection = 1;
 myList = {
     "name":"菜单",
     "num":14,
@@ -127,9 +127,9 @@ $(function() {
 		//console.log($(this).attr("name"));
 		//$(".am-panel-hd").find([id='am-active']);
 		
+		$(".am-panel-group").find('[id="' + $(this).attr("name") + '"]').parents("div[id^='business-section']").css("height", "auto");
 		$(".am-panel-group").find('[id="' + $(this).attr("name") + '"]').parents("div[id^='business-section']").addClass("am-in");
 		$(".am-panel-group").find('[id="' + $(this).attr("name") + '"]').parents("div[id^='business-section']").parent().find("#web-icon").attr("class", "am-icon-angle-down am-fr am-margin-right");
-		
 	});
 	
 	//折叠框icon变形
