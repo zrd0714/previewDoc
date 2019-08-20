@@ -456,12 +456,14 @@ function dropifyRender() {
 }
 
 $('.open-checklist-all').click(function() {
-	$("div[id^='business-section']").css("height", "auto");
-	$("div[id^='business-section']").addClass("am-in");
-	$("div[id^='business-section']").parent().find("#web-icon").attr("class", "am-icon-angle-down am-fr am-margin-right");
+	//$("div[id^='business-section']").css("height", "auto");
+	//$("div[id^='business-section']").addClass("am-in");
+	//$("div[id^='business-section']").parent().find("#web-icon").attr("class", "am-icon-angle-down am-fr am-margin-right");
+	$("div[id^='business-section']").collapse('open');
 });
 
 $('.collapse-checklist-all').click(function() {
-	$("div[id^='business-section']").removeClass("am-in");
-	$("div[id^='business-section']").parent().find("#web-icon").attr("class", "am-icon-angle-right am-fr am-margin-right");
+	//$("div[id^='business-section']").removeClass("am-in");
+	//$("div[id^='business-section']").parent().find("#web-icon").attr("class", "am-icon-angle-right am-fr am-margin-right");
+	$("div[id^='business-section']").collapse('close');
 });
